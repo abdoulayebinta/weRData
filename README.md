@@ -3,7 +3,8 @@
 ## Programming in R and use R for effective data analysis.
 
 
-### Data is everywhere.
+### INTRODUCTION
+####Data is everywhere.
 Nowadays, everyone has to deal with mounds of data,
 whether they call themselves "data analysts" or not.
 But people who possess a toolbox of data analysis skills
