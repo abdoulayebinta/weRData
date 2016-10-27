@@ -18,7 +18,7 @@ hist(lynx)
 h <- hist(lynx,
           breaks = 11,
           freq = FALSE,
-          col = "blue",
+          col = "green",
           main = "Histogram of Anual Canadian Lynx Trapping\n1821-1934",
           xlab = "Number of Lynx Trapped")
 
