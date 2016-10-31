@@ -25,7 +25,7 @@ cm_name LIKE 'Fuel (diesel)' AND mp_year = 2013
 GROUP BY adm0_name, adm1_name, cm_name, foodprices.mp_price 
 ORder BY avg(foodprices.mp_price) limit 3
 
-# What was the average price of Rics(imported) in Guinea, Liberia & Nigeria 
+# What was the average price of Rice(imported) in Guinea, Liberia & Nigeria 
 # for the years 2010, 2012 and 2014?
 SELECT foodprices.adm0_name, foodprices.cm_name, AVG(mp_price) 
 FROM foodprices 
@@ -35,6 +35,29 @@ AND mp_year IN (2010, 2012, 2014)
 GROUP BY foodprices.adm0_name, foodprices.cm_name
 ORDER BY foodprices.adm0_name
 
+# Run EXPLAIN on the last query
+EXPLAIN
+SELECT foodprices.adm0_name, foodprices.cm_name, AVG(mp_price) 
+FROM foodprices 
+WHERE cm_name LIKE 'Rice (imported)'
+AND ((adm0_name LIKE 'Guinea') OR (adm0_name LIKE 'Liberia') OR (adm0_name LIKE 'Nigeria'))
+AND mp_year IN (2010, 2012, 2014)
+GROUP BY foodprices.adm0_name, foodprices.cm_name
+ORDER BY foodprices.adm0_name
+
+# Create three individual indexes on adm0_name, cm_name and mp_year
+CREATE INDEX idx_adm0_name ON foodprices(adm0_name);
+CREATE INDEX idx_cm_name ON foodprices(cm_name);
+CREATE INDEX idx_mp_year ON foodprices(mp_year);
+
+EXPLAIN
+SELECT foodprices.adm0_name, foodprices.cm_name, AVG(mp_price) 
+FROM foodprices 
+WHERE cm_name LIKE 'Rice (imported)'
+AND ((adm0_name LIKE 'Guinea') OR (adm0_name LIKE 'Liberia') OR (adm0_name LIKE 'Nigeria'))
+AND mp_year IN (2010, 2012, 2014)
+GROUP BY foodprices.adm0_name, foodprices.cm_name
+ORDER BY foodprices.adm0_name
 
 
 
