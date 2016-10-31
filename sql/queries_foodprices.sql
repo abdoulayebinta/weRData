@@ -10,3 +10,10 @@ from foodprices
 where cm_name LIKE 'Sorghum'
 and mp_year = 2014
 
+# What was the average price of Sorghum for each country in 2014?
+select adm0_name, avg(mp_price)
+from foodprices
+where cm_name LIKE 'Sorghum'
+and mp_year = 2014
+group by adm0_name
+order by adm0_name
