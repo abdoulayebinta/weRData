@@ -4,4 +4,9 @@ FROM foodprices
 WHERE adm0_name LIKE 'Guinea'
 ORDER BY cm_name
 
-# 
+# What was the average price of Sorghum for all countries in 2014?
+select avg(mp_price)
+from foodprices
+where cm_name LIKE 'Sorghum'
+and mp_year = 2014
+
