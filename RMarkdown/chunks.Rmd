@@ -1,0 +1,16 @@
+R Code Chunks
+======================================================
+
+With R Markdown, you can insert R code chunks including
+plots:
+
+```{r qplot, fig.width=4, fig.height=3, message=FALSE}
+
+# quick summary and plot
+library(ggplot2)
+summary(cars)
+qplot(speed, dist, data = cars) + geom_smooth()
+
+# Clean up
+rm(list = ls())
+```
