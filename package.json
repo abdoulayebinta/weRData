@@ -1,0 +1,22 @@
+{
+  "name": "we-are-data",
+  "version": "0.0.1",
+  "description": "An interactive dashboard developed in R, RMarkdown and Shiny",
+  "main": "index.js",
+  "scripts": {
+    "start": "open http://localhost:4321 & httpster -p 4321"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdoulayebinta/weRData.git"
+  },
+  "author": "Abdoulaye Bah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abdoulayebinta/weRData/issues"
+  },
+  "homepage": "https://github.com/abdoulayebinta/weRData#readme",
+  "dependencies": {
+    "httpster": "^1.0.3"
+  }
+}
